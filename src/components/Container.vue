@@ -1,17 +1,32 @@
 <template>
   <div class="container">
     <h1>{{ msg }}</h1>
-    <MailInput />
+    <div>
+      <MailInput v-on:changeTextarea="updateMails($event)" />
+      <MailList v-if="mails.length > 0" :list="mails" />
+    </div>
   </div>
 </template>
 
 <script>
 import MailInput from './MailInput.vue'
+import MailList from './MailList.vue'
 
 export default {
   name: 'Container',
+  data() {
+    return {
+      mails: [],
+    }
+  },
+  methods: {
+    updateMails(e) {
+      this.mails = e;
+    }
+  },
   components: {
-    MailInput
+    MailInput,
+    MailList,
   },
   props: {
     msg: String
@@ -29,6 +44,12 @@ export default {
 
 .container:hover {
   box-shadow: 0.25rem 0.25rem 0.5rem #DDDDDD;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: row;
+
 }
 
 h1 {
