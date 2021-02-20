@@ -31,7 +31,8 @@ export default {
   computed: {
     properMails() {
       const inputed = this.textAreaValue.split(" ");
-      return inputed.filter(m => mailRegex.test(m));
+      const mailys = inputed.filter(m => mailRegex.test(m));
+      return mailys.map(m => m[m.length -1] === "," ? m.slice(0, -1) : m);
     },
   },
   watch: {
@@ -58,10 +59,16 @@ export default {
   padding: 1rem;
   border-color: #888888;
   border-radius: 0.5rem;
+  min-width: 20rem;
   width: 100%;
   resize: none;
 }
 .layout > .area:focus {
   outline: none;
+}
+
+p{
+  margin: 0;
+  margin-top: 0.25rem;
 }
 </style>

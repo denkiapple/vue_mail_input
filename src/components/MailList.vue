@@ -24,17 +24,21 @@ export default {
 .layout {
   width: 100%;
   margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mailChip {
   box-sizing: border-box;
   width: 100%;
   margin: 0.5rem 0;
-  background-color: #c0fac2;
-  border-radius: 0.25rem;
+  border: 1px solid #59c95c;
+  background-color: #e6ffe6;
+  border-radius: 0.5rem;
   text-align: left;
-  padding: 0.1rem 0.8rem;
-  font-size: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
 }
 
 .button {

@@ -38,7 +38,6 @@ export default {
 .container {
   background-color: #FFFFFF;
   padding: 1.5rem;
-  border-radius: 0.5rem;
   transition: all 600ms;
 }
 
